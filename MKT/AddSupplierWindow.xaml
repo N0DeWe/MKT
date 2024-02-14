@@ -1,0 +1,54 @@
+﻿<Window x:Class="MKT.AddSupplierWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MKT"
+        mc:Ignorable="d"
+        Title="AddSupplierWindow" Height="450" Width="400" Icon="Снимок1.PNG" OpacityMask="Black" Background="#FF04081F">
+
+    <Window.Resources>
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="FontSize" Value="16" />
+            <Setter Property="Background" Value="#FF04081F" />
+            <Setter Property="BorderBrush" Value="#FF04081F"/>
+            <Setter Property="Foreground" Value="#FF1B71B8"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Background="{TemplateBinding Background}" 
+                  BorderBrush="{TemplateBinding BorderBrush}"
+                  BorderThickness="{TemplateBinding BorderThickness}">
+                            <ContentPresenter HorizontalAlignment="Center" 
+                               VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" 
+                          Value="True">
+                                <Setter Property="Background" 
+                           Value="#FF1E2446"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <Viewbox>
+        <Grid>
+        <Button x:Name="AddButton" Content="Добавить" Margin="159,375,158,21" Click="AddButtonClick"/>
+        <Label x:Name="label" Content="Выберите тип лица" Margin="10,10,221,0" VerticalAlignment="Top" Foreground="#FF1B71B8" FontSize="16"/>
+        <ComboBox x:Name="supplierComboBox" Margin="18,41,240,0" VerticalAlignment="Top" SelectionChanged="supplierComboBoxSelectionChanged">
+            <TextBlock>Физическое лицо</TextBlock>
+            <TextBlock>Юридическое лицо</TextBlock>
+        </ComboBox>
+        <Label x:Name="label1" Content="Введите ФИО" Margin="10,104,221,0" VerticalAlignment="Top" Foreground="#FF1B71B8" FontSize="16"/>
+        <Label x:Name="label2" Content="Ведите серию и номер паспорта" Margin="10,163,123,0" VerticalAlignment="Top" Foreground="#FF1B71B8" FontSize="16"/>
+        <Label x:Name="label3" Content="Введите ИНН" Margin="10,222,221,0" VerticalAlignment="Top" Foreground="#FF1B71B8" FontSize="16"/>
+        <TextBox x:Name="nameTextBox" Height="23" Margin="10,140,147,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
+        <TextBox x:Name="pasportNumberTextBox" Height="23" Margin="10,199,147,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" PreviewTextInput="pasportNumberTextBoxPreviewTextInput"/>
+        <TextBox x:Name="TINTextBox" HorizontalAlignment="Left" Height="23" Margin="10,258,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="235" PreviewTextInput="TINTextBoxPreviewTextInput"/>
+
+    </Grid>
+        </Viewbox>
+</Window>
